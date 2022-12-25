@@ -153,6 +153,14 @@ onMounted(() => {
 });
 </script>
 <style lang="scss">
+.pad-20 {
+    padding: 20px;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .canvasSign {
     background-color: #fff;
     border: 1px solid #ccc;
