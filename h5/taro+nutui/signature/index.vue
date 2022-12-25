@@ -6,8 +6,8 @@
                     class="canvasSign"
                     id="canvasSign"
                     @touchstart="startEventHandler"
-                    @touchmove="move"
-                    @touchend="end"
+                    @touchmove="moveEventHandler"
+                    @touchend="endEventHandler"
                     @touchleave="leaveEventHandler"
                 />
             </div>
@@ -71,7 +71,7 @@ const startEventHandler = event => {
 };
 
 // 签名 ing
-const move = e => {
+const moveEventHandler = e => {
     state.hasDraw = true; // 更新用户的绘画状态,用户判断用户是否签名
 
     e.preventDefault();
@@ -85,7 +85,7 @@ const move = e => {
 };
 
 // 停止签名
-const end = e => {
+const endEventHandler = e => {
     e.preventDefault();
 };
 
@@ -99,7 +99,7 @@ const clearClick = () => {
     state.hasDraw = false;
     init();
 };
-
+// 保存签名
 const saveClick = () => {
     console.log('state.flag ', state.flag);
     if (state.hasDraw) {
